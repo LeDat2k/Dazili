@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 1</title>
+</head>
+<body>
+    <!-- cách 1 -->
+        <input type="number" placeholder="Nhập Tháng [1 -> 12] " id="bai1_month" /> <br />
+        <input type="number" placeholder="Nhập năm " id="bai1_year" /> <br />
+        <button onclick="isMonth()">Check!</button>
+        <div class="bai_1" id="bai1"></div>
+    </div>
+    <script>
+            function isMonth() {
+        var month1 = document.getElementById('bai1_month').value;
+        var year1 = document.getElementById('bai1_year').value;
+        if (month1 <= 12 && month1 % 2 != 0) {
+            document.getElementById('bai1').innerHTML = `Tháng ${month1} có 31 ngày`;
+        } else if (month1 == 2) {
+            if (year1 % 4 === 0 || year1 % 400 === 0) {
+                document.getElementById('bai1').innerHTML = `Tháng ${month1} có 29 ngày`;
+            } else {
+                document.getElementById('bai1').innerHTML = `Tháng ${month1} có 28 ngày`;
+            }
+        } else if (month1 > 12) {
+            document.getElementById('bai1').innerHTML = `Không có tháng ${month1}`;
+        } else {
+            document.getElementById('bai1').innerHTML = `Tháng ${month1} có 30 ngày`;
+        }
+    }
+    //cách 2  
+        function getNumberOfDays(month, year) {
+        if (month < 1 || month > 12) {
+        return "Tháng không hợp lệ";
+    }
+        switch (month) {
+    case 1:
+    case 3:
+    case 5:
+    case 7:
+    case 8:
+    case 10:
+    case 12:
+        return 31;
+    case 4:
+    case 6:
+    case 9:
+    case 11:
+        return 30;
+    case 2:
+        if (isLeapYear(year)) {
+        return 29;
+        } else {
+        return 28;
+        }
+    }
+}
+
+function isLeapYear(year) {
+    if (year % 4 !== 0) {
+        return false;
+    }
+        if (year % 100 === 0 && year % 400 !== 0) {
+    return false;
+        }
+    return true;
+}
+
+const month = parseInt(prompt("Nhập tháng (1-12): "));
+const year = parseInt(prompt("Nhập năm (bỏ trống nếu không cần): "));
+const numberOfDays = getNumberOfDays(month, year);
+
+if (year) {
+    console.log(`Tháng ${month} năm ${year} có ${numberOfDays} ngày.`);
+} else {
+    console.log(`Tháng ${month} có ${numberOfDays} ngày.`);
+}
+    </script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="css/text" href="./b.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+<div id="slider">
+    <div id="stage">
+        <div id="shape" class="ring backfaces">
+            <div class="plane item-1"> <i class="fa-solid fa-user"></i> </div>
+            <div class="plane item-2"> <i class="fa-solid fa-phone"></i> </div>
+            <div class="plane item-3"> <i class="fa-solid fa-flag" style="color: #67c165;"></i></div>
+            <div class="plane item-4">  <i class="fa-brands fa-discord"></i></div>
+            <div class="plane item-5">  <i class="fa-solid fa-cart-shopping"></i></div>
+            <div class="plane item-6">  <i class="fa-solid fa-gamepad"></i></div>
+            <div class="plane item-7">  <i class="fa-brands fa-facebook" style="color: #74C0FC;"></i></div>
+            <div class="plane item-8"> <i class="fa-solid fa-school" style="color: #FFD43B;"></i> </div>
+            <div class="plane item-9"> <i class="fa-solid fa-icons" style="color: #8194a2;"></i> </div>
+        </div>
+    </div>
+</div>
+    <style>
+#slider {
+    background-color: rgb(172, 225, 177);
+    background-image: -webkit-gradient (radial, 50% 300, 1, 50% 300, 400, from(rgba(255, 255, 255, 0.3)), to(rgba(255, 255, 255, 0)));
+    width: 1700px;
+    height: 900px;
+    -webkit-perspective: 800px;
+    -moz-perspective: 800px;
+    -webkit-perspective-origin: 50% 100px;
+    -moz-perspective-origin: 50% 100px;
+}
+
+#stage {
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    transform: translateZ(-200px);
+}
+
+#shape {
+    position: relative;
+    margin-left: 1150px;
+    top: 400px;
+    height: 500px;
+    width: 210px;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-animation: spin 9s infinite linear;
+    -moz-animation: spin 9s infinite linear;
+    -ms-animation: spin 9s infinite linear;
+    animation: spin 9s infinite linear;
+}
+
+@-webkit-keyframes spin {
+    from { transform: rotateY(100); }
+    to { transform: rotateY(-300deg); }
+}
+
+.plane {
+    position: absolute;
+    height: 210px;
+    width: 210px;
+    border: 1px solid white;
+    border-radius: 12px;
+    text-align: center;
+    font-size: 167px;
+    color: rgb(254, 254, 254);
+    background-color: rgba(228, 180, 180, 0.6);
+}
+
+.ring>.item-1 { transform: rotateY(0deg) translateZ(388px); }
+.ring>.item-2 { transform: rotateY(40deg) translateZ(388px); }
+.ring>.item-3 { transform: rotateY(80deg) translateZ(388px); }
+.ring>.item-4 { transform: rotateY(120deg) translateZ(388px); }
+.ring>.item-5 { transform: rotateY(160deg) translateZ(388px); }
+.ring>.item-6 { transform: rotateY(200deg) translateZ(388px); }
+.ring>.item-7 { transform: rotateY(240deg) translateZ(388px); }
+.ring>.item-8 { transform: rotateY(280deg) translateZ(388px); }
+.ring>.item-9 { transform: rotateY(320deg) translateZ(388px); }
+</style>
+
+</body>
+</html>
+
+</body>
+</html>

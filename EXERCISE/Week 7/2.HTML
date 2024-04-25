@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="number"/>
+    <button type="button" onclick="check()">check</button>
+    <script>
+        //nhập vào 1 số từ bàn phím, Kiểm tra số đó là Chẵn Hay lẻ
+        //Xuất hiện kết quả ra màn hình
+    function check(){
+        var a = parseInt(document.getElementById('number').value);
+        console.log(a)
+    if( a%2==0) {
+        document.write("biến a là số Chẵn")
+    }else{
+        document.write("biến a là số lẻ")
+    }
+    }
+    </script>
+</body>
+</html>

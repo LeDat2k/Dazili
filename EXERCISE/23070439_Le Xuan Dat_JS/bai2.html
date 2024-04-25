@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BÀI 2</title>
+</head>
+<body>
+        <div class="bai_2">
+        <input type="number" placeholder="Nhập a = " id="a" /> <br />
+        <input type="number" placeholder="Nhập b = " id="b" /> <br />
+        <input type="number" placeholder="Nhập c = " id="c" /> <br />
+        <button onclick="isPT()">Check!</button>
+        <div class="bai_2" id="bai2"></div>
+    </div>
+    <script>
+            function isPT() {
+        const a = document.getElementById('a').value;
+        const b = document.getElementById('b').value;
+        const c = document.getElementById('c').value;
+
+        const delta = b ** 2 - 4 * a * c;
+
+        if (delta > 0) {
+            const x1 = (-b + Math.sqrt(delta)) / 2 * a;
+            const x2 = (-b - Math.sqrt(delta)) / 2 * a;
+            document.getElementById('bai2').innerHTML = `Phương trình có hai nghiệm phân biệt: <br/> x1 = ${x1} <br/> x2 = ${x2}`;
+        } else if (delta === 0) {
+            document.getElementById('bai2').innerHTML = `Phương trình có nghiệm kép:`;
+            const x = -b / 2 * a;
+            document.getElementById('bai2').innerHTML = `x1 = x2 = ${x}`;
+        } else {
+            document.getElementById('bai2').innerHTML = `Phương trình vô nghiệm.`;
+        }
+    }
+    </script>
+</body>
+</html>
